@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import About from "./components/About/About";
+import Navbar from "./components/Uİ/Navbar/Navbar";
+import './styles/app.scss';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [data, setData] = useState();
+
+    const fetchData = () => {
+        fetch('https://yts.mx/api/v2/list_movies.json?limit=1')
+            .then((response) => response.json())
+            .then((data) => setData(data));
+    }
+
+
+    useEffect(() => {
+        fetchData();
+        console.log(data);
+    }, [data])
+
+    return (
+        <BrowserRouter>
+            <Navbar />
+            <Routes>
+                <Route path='' element={<About setData={data} />} />
+                <Route path='/movies' element='' />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;

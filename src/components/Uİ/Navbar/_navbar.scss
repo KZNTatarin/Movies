@@ -1,0 +1,17 @@
+nav {
+    padding: 15px 0;
+    background-color: $black-color;
+}
+
+.navbar__links {
+    text-align: center;
+
+    a {
+        text-decoration: none;
+        margin: 0 30px;
+
+        &:hover {
+            color: $red-color;
+        }
+    }
+}
