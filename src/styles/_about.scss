@@ -1,0 +1,34 @@
+.main {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-bg {
+    height: 92.7vh;
+    background-size: cover;
+}
+
+.film__content {
+    display: flex;
+}
+
+.film__subtitle {
+    letter-spacing: 2.2px;
+}
+
+.film__title {
+    margin-bottom: 30px;
+    color: $red-color;
+}
+
+.film__subtitle, .film__title {
+    width: 300px;
+}
+
+.film__img {
+    margin-left: 80px;
+}
