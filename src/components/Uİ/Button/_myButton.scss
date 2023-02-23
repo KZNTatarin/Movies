@@ -1,0 +1,17 @@
+.myBtn {
+    padding: 10px 15px;
+    background: white;
+    color: $red-color;
+    font-weight: 700;
+    border: solid 2px $red-color;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 0 5px;
+
+    &:hover {
+        background-color: $red-color;
+        color: white;
+
+    }
+}

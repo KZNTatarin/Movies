@@ -19,7 +19,15 @@
   margin: 0 auto;
 }
 
+.red-text {
+  color: $red-color;
+}
+
 body, a, input {
   font-family: $font-family;
   color: white;
+}
+
+body {
+  background-color: $black-color;
 }

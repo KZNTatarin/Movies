@@ -1,7 +1,11 @@
 @import './vars';
 @import './default';
+
 @import '../components/Uİ/Navbar/navbar';
 @import '../components/Uİ/İnput/myİnput';
+@import '../components/Uİ/Button/myButton';
+@import '../components/Uİ/Loader/loader';
 
 @import './about';
 @import './movies';
+@import '../components/Movieİtem/movieİtem';

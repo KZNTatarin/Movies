@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Loader from "../components/Uİ/Loader/Loader";
 
 const About = (props) => {
     const [film, setFilm] = useState();
@@ -26,9 +27,7 @@ const About = (props) => {
                 </div>
             </div>
         </div>
-    ) : (
-        <p>loading...</p>
-    );
+    ) : <Loader/>;
 };
 
 export default About;
