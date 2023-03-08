@@ -1,44 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Main from "./pages/Main";
+
 import Navbar from "./components/Uİ/Navbar/Navbar";
-import "./styles/app.scss";
+
+import Main from "./pages/Main";
 import Movies from "./pages/Movies";
+import Movie from "./pages/Movie";
+
+import "./styles/app.scss";
 
 function App() {
-  const [data, setData] = useState();
-  const [filter, setFilter] = useState('');
-  console.log(filter);
-  
-
-  const fetchData = (filterData) => {
-    fetch(`https://yts.mx/api/v2/list_movies.json?sort_by=${filterData}&page=1`)
-      .then((response) => response.json())
-      .then((data) => setData(data.data));
-  };
-
-  useEffect(() => {
-    if (data === undefined) {
-      fetchData();
-    }
-  }, []);
-
-  useEffect(() => {
-    fetchData(filter);
-  }, [filter])
-
-
-
-
-  return (
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="" element={<Main data={data} />} />
-        <Route path="/movies" element={<Movies data={data} setFilter={setFilter}/>} />
-      </Routes>
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <Navbar />
+            <Routes>
+                <Route path="/" element={<Main />} />
+                <Route path="/movies" element={<Movies />} />
+                <Route path="/movies/:id" element={<Movie />} />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;

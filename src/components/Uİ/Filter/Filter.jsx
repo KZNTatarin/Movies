@@ -1,33 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MyButton from '../Button/MyButton';
 
-const Filter = (filter) => {
-
-
-    const handlFilter = (type) => {
-        switch (type) {
-            case 'rating':
-                filter.filter.setFilter('rating');
-                break;
-
-            case 'title':
-                filter.filter.setFilter('title');
-                break;
-
-            case 'year':
-                filter.filter.setFilter('year');
-                break;
-
-            default:
-                filter = '';
-        }
-    }
+const Filter = (props) => {
+    const handleFilter = (type) => {
+        props.setFilter(type);
+    };
 
     return (
         <div className="filter">
-            <MyButton onClick={() => handlFilter('rating')} >Rating</MyButton>
-            <MyButton onClick={() => handlFilter('title')} >Title</MyButton>
-            <MyButton onClick={() => handlFilter('year')} >Year</MyButton>
+            <MyButton onClick={() => handleFilter('rating')}>Rating</MyButton>
+            <MyButton onClick={() => handleFilter('title')}>Title</MyButton>
+            <MyButton onClick={() => handleFilter('year')}>Year</MyButton>
+            <MyButton onClick={() => handleFilter('')}>Default</MyButton>
         </div>
     );
 };
