@@ -5,7 +5,7 @@ const About = (props) => {
     const [film, setFilm] = useState();
 
     useEffect(() => {
-        const randomId = Math.floor(Math.random() * 50);
+        const randomId = Math.floor(Math.random() * 5);
         setFilm(props?.data?.movies[randomId]);
     }, [props?.data?.movies]);
 

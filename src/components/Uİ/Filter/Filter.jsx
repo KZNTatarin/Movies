@@ -3,9 +3,6 @@ import MyButton from '../Button/MyButton';
 
 const Filter = (filter) => {
 
-    // const [filterActive, setFilterActive] = useState(false)
-    // const [filteredMovie, setFilteredMovie] = useState([])
-    // const [stateFilter, setStateFilter] = useState()
 
     const handlFilter = (type) => {
         switch (type) {

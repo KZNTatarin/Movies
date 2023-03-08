@@ -9,11 +9,10 @@ function App() {
   const [data, setData] = useState();
   const [filter, setFilter] = useState('');
   console.log(filter);
-
+  
 
   const fetchData = (filterData) => {
-    console.log(`https://yts.mx/api/v2/list_movies.json?limit=50&sort_by=${filterData}`);
-    fetch(`https://yts.mx/api/v2/list_movies.json?limit=50&sort_by=${filterData}`)
+    fetch(`https://yts.mx/api/v2/list_movies.json?sort_by=${filterData}&page=1`)
       .then((response) => response.json())
       .then((data) => setData(data.data));
   };

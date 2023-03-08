@@ -1,4 +1,6 @@
 import React from 'react';
+import MyButton from '../Uİ/Button/MyButton';
+
 
 const Movieİtem = (movie) => {
     return (
@@ -13,6 +15,7 @@ const Movieİtem = (movie) => {
                     </div>))}
                 </div>
                 <div className='movie__rating'> <span className='red-text'>Rating</span> on IMDb: {movie.data.rating}</div>
+                <MyButton>More</MyButton>
             </div>
         </div>
     );
