@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-import { MoviesService } from "../services/MoviesService";
+import { MoviesService } from "../../services/MoviesService";
 
-import { generateRandomId } from "../utils/randomİd";
+import { generateRandomId } from "../../utils/randomİd";
 
-import Loader from "../components/Uİ/Loader/Loader";
+import Loader from "../../components/Uİ/Loader/Loader";
+
+import "./Main.scss";
 
 const Main = () => {
     const [film, setFilm] = useState();

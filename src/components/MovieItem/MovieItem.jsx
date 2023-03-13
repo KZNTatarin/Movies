@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {Link} from "react-router-dom";
 
 import MyButton from '../Uİ/Button/MyButton';
@@ -19,8 +18,8 @@ const Movieİtem = (movie) => {
                     </div>
                 )}
                 <div className='movie__rating'> <span className='red-text'>Rating</span> on IMDb: {movie.data.rating}</div>
-                <Link to={`/movies/${movie.data.id}`}>
-                <MyButton>More</MyButton>
+                <Link target="_blank" to={`/movies/${movie.data.id}`}>
+                <MyButton >More</MyButton>
                 </Link>
             </div>
         </div>

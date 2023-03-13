@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
-import { MoviesService } from '../services/MoviesService';
+import { MoviesService } from '../../services/MoviesService';
 
-import Movieİtem from '../components/Movieİtem/Movieİtem';
-import Filter from '../components/Uİ/Filter/Filter';
-import Loader from '../components/Uİ/Loader/Loader';
-import Myİnput from '../components/Uİ/İnput/Myİnput';
+import MovieItem from '../../components/MovieItem/MovieItem';
+import Filter from '../../components/Uİ/Filter/Filter';
+import Loader from '../../components/Uİ/Loader/Loader';
+import Myİnput from '../../components/Uİ/İnput/Myİnput';
+
+import './Movies.scss';
 
 const Movies = () => {
     const [moviesList, setMoviesList] = useState([]);
@@ -63,7 +65,7 @@ const Movies = () => {
 
                     <div className="movies__list">
                         {moviesList.map((movie) =>
-                            <Movieİtem data={movie} />
+                            <MovieItem data={movie} />
                         )}
                     </div>
                     {fetching && <Loader />}

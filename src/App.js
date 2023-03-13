@@ -1,12 +1,13 @@
 import React from "react";
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
 import Navbar from "./components/Uİ/Navbar/Navbar";
 
-import Main from "./pages/Main";
-import Movies from "./pages/Movies";
-import Movie from "./pages/Movie";
+import Main from "./pages/main/Main";
+import Movies from "./pages/movies/Movies";
+import Movie from "./pages/movie/Movie";
+import NotFound from "./pages/NotFound";
 
 import "./styles/app.scss";
 
@@ -16,8 +17,10 @@ function App() {
             <Navbar />
             <Routes>
                 <Route path="/" element={<Main />} />
+                <Route path="/404" element={<NotFound />} />
                 <Route path="/movies" element={<Movies />} />
                 <Route path="/movies/:id" element={<Movie />} />
+                <Route path="*" element={<Navigate to="/404" />} />
             </Routes>
         </BrowserRouter>
     );
